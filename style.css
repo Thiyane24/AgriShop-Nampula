@@ -1,0 +1,331 @@
+
+    /* ================ */
+    /* CSS Variables */
+    /* ================ */
+    :root {
+      /* Colors */
+      --primary: #4CAF50;
+      --primary-light: #81C784;
+      --secondary: #8D6E63;
+      --accent: #FFC107;
+      --trust: #2196F3;
+      --dark: #2E7D32;
+      --light: #FFFFFF;
+      --text: #263238;
+      --gray: #E0E0E0;
+      --bg-light: #F5F5F5;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-xxl: 4rem;
+      
+      /* Typography */
+      --font-main: 'Segoe UI', 'Roboto', sans-serif;
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-bold: 700;
+      
+      /* Effects */
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+
+    /* ================ */
+    /* Base Styles */
+    /* ================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--light);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-sm);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    section {
+      padding: var(--space-xxl) 0;
+    }
+
+    /* ================ */
+    /* Components */
+    /* ================ */
+    /* Header */
+    header {
+      background-color: var(--light);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-sm) 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: var(--space-md);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: var(--font-weight-medium);
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: 5px;
+      font-weight: var(--font-weight-medium);
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--light);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--light);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,0.2)), 
+                  url('vineyard-france\ \(1\).jpg') center/cover;
+      text-align: center;
+      padding: var(--space-xxl) 0;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto var(--space-lg);
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--bg-light);
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .about-content p {
+      margin-bottom: var(--space-md);
+    }
+
+    /* Products Section */
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .product-card {
+      background: var(--light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .product-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: var(--space-md);
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .product-price {
+      color: var(--primary);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-sm);
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: var(--bg-light);
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: var(--space-xs);
+      border: 1px solid var(--gray);
+      border-radius: 5px;
+      font-family: var(--font-main);
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background-color: var(--primary);
+      color: var(--light);
+      border: none;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .contact-form button:hover {
+      background-color: var(--dark);
+    }
+
+    /* ================ */
+    /* Responsive Design */
+    /* ================ */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: var(--space-xl) 0;
+      }
+
+      .hero {
+        padding: var(--space-xl) 0;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  
